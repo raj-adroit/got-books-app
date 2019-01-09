@@ -114,4 +114,8 @@ got-books-api/.fusebox/
 # DynamoDB Local files
 got-books-api/.dynamodb/
 
+
+# DynamoDB Local files
+got-books-api/data/
+
 # End of https://www.gitignore.io/api/node,angular
