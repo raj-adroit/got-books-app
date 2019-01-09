@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: rajadroit/books_web
+    build: got-books-frontend/
+    ports:
+     - "80:80"
+  backend:
+    image: rajadroit/books_backend
+    build: got-books-api/
+    ports:
+      - "8080:8080"

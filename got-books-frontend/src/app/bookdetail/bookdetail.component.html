@@ -1,0 +1,98 @@
+<div class="row bookDetail">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-title">
+        <h5 class="clsTitle"><strong>{{bookDetails?.name}}</strong></h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-6">
+                <label><b>No of Pages:</b></label>
+              </div>
+              <div class="col-md-6">
+                <label>{{bookDetails?.numberOfPages}}</label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label><b>Publisher:</b></label>
+              </div>
+              <div class="col-md-6">
+                <label>{{bookDetails?.publisher}}</label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label><b>Country:</b></label>
+              </div>
+              <div class="col-md-6">
+                <label>{{bookDetails?.country}}</label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label><b>Media Type:</b></label>
+              </div>
+              <div class="col-md-6">
+                <label>{{bookDetails?.mediaType}}</label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label><b>Released:</b></label>
+              </div>
+              <div class="col-md-6">
+                <label>{{bookDetails?.released}}</label>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <label><b>Total Characters:</b></label>
+              </div>
+              <div class="col-md-6">
+                <label>{{bookDetails?.characters.length}}</label>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <textarea [(ngModel)]="book.message" required></textarea>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-6">
+                <button class="btn btn-lg btn-primary btnreview" (click)="createReview()">ADD REVIEW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <h5 ><b>Reviews:</b></h5>
+          </div>
+        </div>
+        <div class="row" *ngFor="let review of bookReviews">
+          <div class="col-md-12">
+            <label> * {{review.message}} </label>
+          </div>
+        </div>
+          <div class="col-md-12" *ngIf="bookReviews.length == 0">
+            <label> ** Be the first one to review ** </label>
+          </div>
+      </div>
+    </div>
+  </div>
